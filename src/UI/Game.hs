@@ -99,12 +99,12 @@ handleEvent (VtyEvent (V.EvKey (V.KChar 'm') [])) = exec toggleProgression
 handleEvent (VtyEvent (V.EvKey V.KRight      [])) = exec (shift Right)
 handleEvent (VtyEvent (V.EvKey V.KLeft       [])) = exec (shift Left)
 handleEvent (VtyEvent (V.EvKey V.KDown       [])) = exec (shift Down)
-handleEvent (VtyEvent (V.EvKey (V.KChar 'l') [])) = exec (shift Right)
-handleEvent (VtyEvent (V.EvKey (V.KChar 'h') [])) = exec (shift Left)
-handleEvent (VtyEvent (V.EvKey (V.KChar 'j') [])) = exec (shift Down)
+handleEvent (VtyEvent (V.EvKey (V.KChar 'd') [])) = exec (shift Right)
+handleEvent (VtyEvent (V.EvKey (V.KChar 'a') [])) = exec (shift Left)
+handleEvent (VtyEvent (V.EvKey (V.KChar 's') [])) = exec (shift Down)
 handleEvent (VtyEvent (V.EvKey V.KUp         [])) = exec rotate
-handleEvent (VtyEvent (V.EvKey (V.KChar 'k') [])) = exec rotate
-handleEvent (VtyEvent (V.EvKey (V.KChar ' ') [])) =
+handleEvent (VtyEvent (V.EvKey (V.KChar 'w') [])) = exec rotate
+handleEvent (VtyEvent (V.EvKey (V.KChar 'r') [])) =
   unlessM (orM [use paused, use (game . to isGameOver)]) $ do
     zoom game hardDrop
     assign locked True
