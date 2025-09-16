@@ -267,10 +267,10 @@ drawHelp =
     $ padTopBottom 1
     $ vBox
     $ map (uncurry drawKeyInfo)
-      [ ("Left"   , "h, ←")
-      , ("Right"  , "l, →")
-      , ("Down"   , "j, ↓")
-      , ("Rotate" , "k, ↑")
+      [ ("Left"   , "a, ←")
+      , ("Right"  , "d, →")
+      , ("Down"   , "s, ↓")
+      , ("Rotate" , "w, ↑")
       , ("Drop"   , "space")
       , ("Mode"   , "m")
       , ("Restart", "r")
