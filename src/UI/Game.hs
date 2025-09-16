@@ -104,7 +104,7 @@ handleEvent (VtyEvent (V.EvKey (V.KChar 'a') [])) = exec (shift Left)
 handleEvent (VtyEvent (V.EvKey (V.KChar 's') [])) = exec (shift Down)
 handleEvent (VtyEvent (V.EvKey V.KUp         [])) = exec rotate
 handleEvent (VtyEvent (V.EvKey (V.KChar 'w') [])) = exec rotate
-handleEvent (VtyEvent (V.EvKey (V.KChar 'r') [])) =
+handleEvent (VtyEvent (V.EvKey (V.KChar ' ') [])) =
   unlessM (orM [use paused, use (game . to isGameOver)]) $ do
     zoom game hardDrop
     assign locked True
