@@ -140,8 +140,8 @@ rotateRaw b@(Block s o@(V2 xo yo) cs)
   | -- O doesn't need rotation
     s == O                             = b
   | -- I only has two orientations
-    s == I && V2 xo (yo + 1) `elem` cs = rotateWith clockwise
-  | otherwise                          = rotateWith counterclockwise
+    s == I && V2 xo (yo + 1) `elem` cs = rotateWith counterclockwise
+  | otherwise                          = rotateWith clockwise
  where
   clockwise        = (+ o) . cwperp . subtract o
   counterclockwise = (+ o) . LV.perp . subtract o
